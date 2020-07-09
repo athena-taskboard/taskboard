@@ -1,4 +1,4 @@
-FROM nodebb/docker:lts
+FROM nodebb/docker:latest
 
 WORKDIR /usr/src/app
 
