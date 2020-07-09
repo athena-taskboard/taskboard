@@ -1,0 +1,10 @@
+{
+  "name": "nodebb-theme-athena",
+  "version": "0.0.1",
+  "description": "Theme for Project Athena",
+  "main": "theme.less",
+  "keywords": [
+
+  ],
+  "license": "MIT"
+}
