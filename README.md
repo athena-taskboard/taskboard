@@ -1,5 +1,7 @@
 # Taskboard
 
+Taskboard is a forum website which uses the open source project NodeBB to provide a platform where medical professionals can vote on our ideas and leave their own ideas to guide the response of Project Athena to COVID-19 with focus and efficiency.
+
 ## Local Development
 
 1. Checkout `taskboard` (this one) and `nodebb` (https://github.com/nodebb/nodebb) repos.
