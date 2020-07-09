@@ -7,7 +7,7 @@ ENV NODE_ENV $NODE_ENV
 
 COPY lib /usr/src/app/lib
 
-RUN npm link lib/* && \
+RUN npm link --save lib/* && \
     npm cache clean --force
     
 ENV NODE_ENV=production \
