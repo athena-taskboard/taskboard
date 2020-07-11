@@ -7,7 +7,7 @@ ENV NODE_ENV $NODE_ENV
 
 COPY lib /usr/src/lib
 
-RUN npm link --save ../lib/* && \
+RUN npm link --save ../lib/lib/* && \
     npm cache clean --force && \
     mkdir /storage && \
     ln -s /storage/config.json /usr/src/app/config.json
