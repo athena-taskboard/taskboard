@@ -5,7 +5,7 @@ WORKDIR /usr/src/app
 ARG NODE_ENV
 ENV NODE_ENV $NODE_ENV
 
-COPY lib /usr/src/lib
+COPY . /usr/src/lib
 
 RUN npm link --save ../lib/lib/* && \
     npm cache clean --force && \
