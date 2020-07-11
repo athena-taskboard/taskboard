@@ -1,0 +1,37 @@
+#-------------------------------------------------------------------------------------------------------------
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License. See https://go.microsoft.com/fwlink/?linkid=2090316 for license information.
+#-------------------------------------------------------------------------------------------------------------
+
+version: '3'
+services:
+  app:
+    build: 
+      context: .
+      dockerfile: ./Dockerfile
+
+    depends_on:
+      - redis
+
+    environment:
+      database: redis
+      redis__host: redis
+      url: "http://127.0.0.1:4567"
+
+    ports: 
+      - 4567:4567
+    # Uncomment the next four lines if you will use a ptrace-based debuggers like C++, Go, and Rust.
+    # cap_add:
+    #  - SYS_PTRACE
+    # security_opt:
+    #   - seccomp:unconfined
+    # entrypoint: /bin/sh -c echo Container started ; while sleep 1; do :; done
+    
+   
+  redis:
+    image: redis:latest
+    expose:
+      - 6379
+    volumes:
+      - ./redis:/data
+    entrypoint: ["redis-server", "--appendonly", "yes"]
