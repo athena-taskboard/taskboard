@@ -5,9 +5,9 @@ WORKDIR /usr/src/app
 ARG NODE_ENV
 ENV NODE_ENV $NODE_ENV
 
-COPY lib /usr/src/app/lib
+COPY lib /usr/src/lib
 
-RUN npm link --save lib/* && \
+RUN npm link --save ../lib/* && \
     npm cache clean --force && \
     mkdir /storage && \
     ln -s /storage/config.json /usr/src/app/config.json
